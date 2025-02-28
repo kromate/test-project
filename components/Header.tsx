@@ -16,7 +16,7 @@ export default function Header() {
     const contextTheme = useTheme();
     darkMode = contextTheme.darkMode;
     contextToggleDarkMode = contextTheme.toggleDarkMode;
-  } catch (e) {
+  } catch {
     // ThemeProvider not available, will use local state
   }
   

@@ -55,7 +55,7 @@ export default function CountryList() {
           setCountries(data);
           setFilteredCountries(data);
           setLoading(false);
-        } catch (fallbackErr) {
+        } catch {
           setError('Failed to load countries. Please try again later.');
           setLoading(false);
         }

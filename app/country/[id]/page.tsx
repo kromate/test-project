@@ -132,7 +132,7 @@ export default function CountryDetail() {
   }
 
   // Helper function to extract values from objects
-  const getValues = (obj: Record<string, any> | undefined): string => {
+  const getValues = (obj: Record<string, unknown> | undefined): string => {
     if (!obj) return 'N/A';
     return Object.values(obj).map((val) => 
       typeof val === 'object' && val !== null && 'name' in val ? val.name : val
