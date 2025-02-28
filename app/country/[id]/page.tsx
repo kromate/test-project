@@ -103,31 +103,31 @@ export default function CountryDetail() {
 
   if (loading) {
     return (
-      <>
+      <div className="min-h-screen bg-very-light-gray dark:bg-very-dark-blue-dm transition-colors duration-300">
         <Header />
         <div className="container mx-auto px-4 py-16 text-center">
           <div className="w-16 h-16 border-4 border-t-blue-500 border-blue-200 rounded-full animate-spin mx-auto"></div>
-          <p className="mt-4 dark:text-white text-very-dark-blue-lm">Loading country details...</p>
+          <p className="mt-4 text-very-dark-blue-lm dark:text-white">Loading country details...</p>
         </div>
-      </>
+      </div>
     );
   }
 
   if (error || !country) {
     return (
-      <>
+      <div className="min-h-screen bg-very-light-gray dark:bg-very-dark-blue-dm transition-colors duration-300">
         <Header />
         <div className="container mx-auto px-4 py-16 text-center">
           <p className="text-red-500">{error || 'Country not found'}</p>
           <button
             onClick={() => router.back()}
-            className="mt-4 inline-flex items-center px-6 py-3 bg-white dark:bg-dark-blue shadow-md rounded-md dark:text-white text-very-dark-blue-lm"
+            className="mt-4 inline-flex items-center px-6 py-3 bg-white dark:bg-dark-blue shadow-md rounded-md text-very-dark-blue-lm dark:text-white"
           >
             <ArrowLeftIcon className="w-4 h-4 mr-2" />
             Back
           </button>
         </div>
-      </>
+      </div>
     );
   }
 
@@ -147,11 +147,11 @@ export default function CountryDetail() {
   };
 
   return (
-    <>
+    <div className="min-h-screen bg-very-light-gray dark:bg-very-dark-blue-dm transition-colors duration-300">
       <Header />
       <div className="container mx-auto px-6 py-16">
         <Link href="/">
-          <button className="flex items-center gap-2 px-8 py-2 shadow-md rounded-md bg-white dark:bg-dark-blue dark:text-white text-very-dark-blue-lm mb-16">
+          <button className="flex items-center gap-2 px-8 py-2 shadow-md rounded-md bg-white dark:bg-dark-blue text-very-dark-blue-lm dark:text-white mb-16">
             <ArrowLeftIcon className="w-4 h-4" />
             Back
           </button>
@@ -169,12 +169,12 @@ export default function CountryDetail() {
           </div>
 
           <div>
-            <h1 className="text-3xl font-bold mb-8 dark:text-white text-very-dark-blue-lm">
+            <h1 className="text-3xl font-bold mb-8 text-very-dark-blue-lm dark:text-white">
               {country.name.common}
             </h1>
 
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 mb-12">
-              <div className="space-y-3 dark:text-white text-very-dark-blue-lm">
+              <div className="space-y-3 text-very-dark-blue-lm dark:text-white">
                 <p><span className="font-semibold">Native Name:</span> {getNativeName()}</p>
                 <p><span className="font-semibold">Population:</span> {country.population.toLocaleString()}</p>
                 <p><span className="font-semibold">Region:</span> {country.region}</p>
@@ -182,7 +182,7 @@ export default function CountryDetail() {
                 <p><span className="font-semibold">Capital:</span> {country.capital?.join(', ') || 'N/A'}</p>
               </div>
 
-              <div className="space-y-3 dark:text-white text-very-dark-blue-lm">
+              <div className="space-y-3 text-very-dark-blue-lm dark:text-white">
                 <p><span className="font-semibold">Top Level Domain:</span> {country.tld?.join(', ') || 'N/A'}</p>
                 <p><span className="font-semibold">Currencies:</span> {getValues(country.currencies)}</p>
                 <p><span className="font-semibold">Languages:</span> {getValues(country.languages)}</p>
@@ -190,12 +190,12 @@ export default function CountryDetail() {
             </div>
 
             {borderCountries.length > 0 && (
-              <div className="dark:text-white text-very-dark-blue-lm">
+              <div className="text-very-dark-blue-lm dark:text-white">
                 <h2 className="font-semibold text-lg mb-4">Border Countries:</h2>
                 <div className="flex flex-wrap gap-3">
                   {borderCountries.map((border) => (
                     <Link key={border.code} href={`/country/${border.code}`}>
-                      <span className="inline-block px-6 py-1 bg-white dark:bg-dark-blue shadow-md rounded-sm dark:text-white text-very-dark-blue-lm text-sm">
+                      <span className="inline-block px-6 py-1 bg-white dark:bg-dark-blue shadow-md rounded-sm text-very-dark-blue-lm dark:text-white text-sm">
                         {border.name}
                       </span>
                     </Link>
@@ -206,6 +206,6 @@ export default function CountryDetail() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 } 

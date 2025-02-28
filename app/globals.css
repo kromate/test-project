@@ -7,7 +7,7 @@
 
 @layer base {
   /* Light mode (default) */
-  html:not(.dark) {
+  :root, html:not(.dark) {
     --background: hsl(0, 0%, 98%);
     --foreground: hsl(200, 15%, 8%);
     --elements: hsl(0, 0%, 100%);
@@ -19,7 +19,7 @@
     --background: hsl(207, 26%, 17%);
     --foreground: hsl(0, 0%, 100%);
     --elements: hsl(209, 23%, 22%);
-    --input: hsl(0, 0%, 52%);
+    --input: hsl(0, 0%, 70%);
   }
 }
 
@@ -35,4 +35,18 @@ html, body, * {
   transition-property: background-color, border-color, color, fill, stroke;
   transition-duration: 200ms;
   transition-timing-function: ease-in-out;
+}
+
+/* Ensure backgrounds are properly applied in dark mode */
+.dark .bg-white {
+  background-color: var(--elements);
+}
+
+.dark .text-white {
+  color: var(--foreground);
+}
+
+/* Ensure text has proper contrast */
+.text-very-dark-blue-lm {
+  color: var(--foreground);
 }

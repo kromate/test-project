@@ -28,20 +28,20 @@ export default function Search({ onSearch, onRegionChange }: SearchProps) {
       <div className="flex flex-col gap-10 md:flex-row md:justify-between md:items-center">
         <div className="relative w-full md:w-1/3">
           <div className="absolute inset-y-0 left-0 pl-6 flex items-center pointer-events-none">
-            <SearchIcon className="h-5 w-5 text-dark-gray" />
+            <SearchIcon className="h-5 w-5 text-dark-gray dark:text-gray-400" />
           </div>
           <input
             type="text"
             placeholder="Search for a country..."
             onChange={handleSearchChange}
-            className="w-full py-4 pl-16 pr-4 shadow-md rounded-lg bg-white dark:bg-dark-blue dark:text-white text-very-dark-blue-lm focus:outline-none"
+            className="w-full py-4 pl-16 pr-4 shadow-md rounded-lg bg-white dark:bg-dark-blue text-very-dark-blue-lm dark:text-white focus:outline-none"
           />
         </div>
 
         <div className="relative w-52">
           <button
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className="w-full flex items-center justify-between py-4 px-6 shadow-md rounded-lg bg-white dark:bg-dark-blue dark:text-white text-very-dark-blue-lm focus:outline-none"
+            className="w-full flex items-center justify-between py-4 px-6 shadow-md rounded-lg bg-white dark:bg-dark-blue text-very-dark-blue-lm dark:text-white focus:outline-none"
           >
             <span>{selectedRegion || 'Filter by Region'}</span>
             <ChevronDownIcon className="h-5 w-5" />
@@ -54,7 +54,7 @@ export default function Search({ onSearch, onRegionChange }: SearchProps) {
                   <li
                     key={region}
                     onClick={() => handleRegionSelect(region)}
-                    className="px-6 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white text-very-dark-blue-lm cursor-pointer"
+                    className="px-6 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-very-dark-blue-lm dark:text-white cursor-pointer"
                   >
                     {region}
                   </li>

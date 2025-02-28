@@ -31,10 +31,10 @@ export default function CountryCard({ country }: CountryCardProps) {
           />
         </div>
         <div className="p-6">
-          <h2 className="font-bold text-lg mb-4 dark:text-white text-very-dark-blue-lm">
+          <h2 className="font-bold text-lg mb-4 text-very-dark-blue-lm dark:text-white">
             {country.name.common}
           </h2>
-          <div className="text-sm space-y-1 dark:text-white text-very-dark-blue-lm">
+          <div className="text-sm space-y-1 text-very-dark-blue-lm dark:text-white">
             <p>
               <span className="font-semibold">Population:</span>{' '}
               {country.population.toLocaleString()}

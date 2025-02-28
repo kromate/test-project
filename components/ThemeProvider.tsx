@@ -1,7 +1,7 @@
 'use client';
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
-type ThemeContextType = {
+export type ThemeContextType = {
   darkMode: boolean;
   toggleDarkMode: () => void;
 };
@@ -21,14 +21,17 @@ type ThemeProviderProps = {
 };
 
 export default function ThemeProvider({ children }: ThemeProviderProps) {
-  const [darkMode, setDarkMode] = useState(false);
+  // Use null for initial state to represent "not initialized yet"
+  // This prevents hydration mismatches by not rendering a specific state during SSR
+  const [darkMode, setDarkMode] = useState<boolean | null>(null);
   const [mounted, setMounted] = useState(false);
   
   // Effect runs on client side only
   useEffect(() => {
-    setMounted(true);
+    // Now we're on the client, we can check for dark mode
     const isDarkMode = document.documentElement.classList.contains('dark');
     setDarkMode(isDarkMode);
+    setMounted(true);
     
     // Listen for system preference changes
     const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -52,7 +55,9 @@ export default function ThemeProvider({ children }: ThemeProviderProps) {
 
   const toggleDarkMode = () => {
     setDarkMode(prevDarkMode => {
-      const newDarkMode = !prevDarkMode;
+      // If darkMode is null (not initialized yet), default to false
+      const currentDarkMode = prevDarkMode === null ? false : prevDarkMode;
+      const newDarkMode = !currentDarkMode;
       
       // Save to localStorage
       localStorage.setItem('theme', newDarkMode ? 'dark' : 'light');
@@ -65,13 +70,28 @@ export default function ThemeProvider({ children }: ThemeProviderProps) {
     });
   };
 
-  // Show a blank div until mounted to prevent hydration mismatch
+  // Show the children but without theme context until mounted
+  // This approach is better than hiding because it allows SSR to work
   if (!mounted) {
-    return <div style={{ visibility: 'hidden' }}>{children}</div>;
+    return (
+      <ThemeContext.Provider 
+        value={{ 
+          darkMode: false, // Default value, won't be used before hydration
+          toggleDarkMode: () => {} // Empty function, won't be called before hydration
+        }}
+      >
+        {children}
+      </ThemeContext.Provider>
+    );
   }
 
   return (
-    <ThemeContext.Provider value={{ darkMode, toggleDarkMode }}>
+    <ThemeContext.Provider 
+      value={{ 
+        darkMode: darkMode === null ? false : darkMode, 
+        toggleDarkMode 
+      }}
+    >
       {children}
     </ThemeContext.Provider>
   );

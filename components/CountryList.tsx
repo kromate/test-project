@@ -94,7 +94,7 @@ export default function CountryList() {
     return (
       <div className="container mx-auto px-4 py-16 text-center">
         <div className="w-16 h-16 border-4 border-t-blue-500 border-blue-200 rounded-full animate-spin mx-auto"></div>
-        <p className="mt-4 dark:text-white text-very-dark-blue-lm">Loading countries...</p>
+        <p className="mt-4 text-very-dark-blue-lm dark:text-white">Loading countries...</p>
       </div>
     );
   }
@@ -112,7 +112,7 @@ export default function CountryList() {
       <Search onSearch={handleSearch} onRegionChange={handleRegionChange} />
       
       {filteredCountries.length === 0 ? (
-        <div className="container mx-auto px-4 py-16 text-center dark:text-white text-very-dark-blue-lm">
+        <div className="container mx-auto px-4 py-16 text-center text-very-dark-blue-lm dark:text-white">
           <p>No countries found matching your criteria.</p>
         </div>
       ) : (

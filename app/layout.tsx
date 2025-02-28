@@ -24,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         {/* This script prevents flash of incorrect theme */}
         <script
@@ -38,8 +38,10 @@ export default function RootLayout({
                 // If dark mode is preferred or saved as dark
                 if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
                   document.documentElement.classList.add('dark');
+                  document.documentElement.classList.remove('light');
                 } else {
                   document.documentElement.classList.add('light');
+                  document.documentElement.classList.remove('dark');
                 }
               })();
             `
