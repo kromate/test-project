@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@layer base {
+  /* Light mode (default) */
+  html:not(.dark) {
+    --background: hsl(0, 0%, 98%);
+    --foreground: hsl(200, 15%, 8%);
+    --elements: hsl(0, 0%, 100%);
+    --input: hsl(0, 0%, 52%);
+  }
+
+  /* Dark mode */
+  html.dark {
+    --background: hsl(207, 26%, 17%);
+    --foreground: hsl(0, 0%, 100%);
+    --elements: hsl(209, 23%, 22%);
+    --input: hsl(0, 0%, 52%);
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+/* Make the transition between light and dark mode smoother */
+html, body, * {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+}

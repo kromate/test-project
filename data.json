@@ -1,0 +1,236 @@
+[
+    {
+        "name": {
+            "common": "Nigeria",
+            "official": "Federal Republic of Nigeria"
+        },
+        "tld": [
+            ".ng"
+        ],
+        "cca2": "NG",
+        "ccn3": "566",
+        "cca3": "NGA",
+        "cioc": "NGR",
+        "independent": true,
+        "status": "officially-assigned",
+        "unMember": true,
+        "currencies": {
+            "NGN": {
+                "name": "Nigerian naira",
+                "symbol": "₦"
+            }
+        },
+        "capital": [
+            "Abuja"
+        ],
+        "region": "Africa",
+        "subregion": "Western Africa",
+        "languages": {
+            "eng": "English"
+        },
+        "latlng": [
+            10.0,
+            8.0
+        ],
+        "borders": [
+            "BEN",
+            "CMR",
+            "TCD",
+            "NER"
+        ],
+        "area": 923768.0,
+        "population": 206139587,
+        "flags": {
+            "png": "https://flagcdn.com/w320/ng.png",
+            "svg": "https://flagcdn.com/ng.svg"
+        }
+    },
+    {
+        "name": {
+            "common": "United States",
+            "official": "United States of America"
+        },
+        "tld": [
+            ".us"
+        ],
+        "cca2": "US",
+        "ccn3": "840",
+        "cca3": "USA",
+        "cioc": "USA",
+        "independent": true,
+        "status": "officially-assigned",
+        "unMember": true,
+        "currencies": {
+            "USD": {
+                "name": "United States dollar",
+                "symbol": "$"
+            }
+        },
+        "capital": [
+            "Washington, D.C."
+        ],
+        "region": "Americas",
+        "subregion": "North America",
+        "languages": {
+            "eng": "English"
+        },
+        "latlng": [
+            38.0,
+            -97.0
+        ],
+        "borders": [
+            "CAN",
+            "MEX"
+        ],
+        "area": 9372610.0,
+        "population": 329484123,
+        "flags": {
+            "png": "https://flagcdn.com/w320/us.png",
+            "svg": "https://flagcdn.com/us.svg"
+        }
+    },
+    {
+        "name": {
+            "common": "Germany",
+            "official": "Federal Republic of Germany"
+        },
+        "tld": [
+            ".de"
+        ],
+        "cca2": "DE",
+        "ccn3": "276",
+        "cca3": "DEU",
+        "cioc": "GER",
+        "independent": true,
+        "status": "officially-assigned",
+        "unMember": true,
+        "currencies": {
+            "EUR": {
+                "name": "Euro",
+                "symbol": "€"
+            }
+        },
+        "capital": [
+            "Berlin"
+        ],
+        "region": "Europe",
+        "subregion": "Western Europe",
+        "languages": {
+            "deu": "German"
+        },
+        "latlng": [
+            51.0,
+            9.0
+        ],
+        "borders": [
+            "AUT",
+            "BEL",
+            "CZE",
+            "DNK",
+            "FRA",
+            "LUX",
+            "NLD",
+            "POL",
+            "CHE"
+        ],
+        "area": 357114.0,
+        "population": 83240525,
+        "flags": {
+            "png": "https://flagcdn.com/w320/de.png",
+            "svg": "https://flagcdn.com/de.svg"
+        }
+    },
+    {
+        "name": {
+            "common": "Japan",
+            "official": "Japan"
+        },
+        "tld": [
+            ".jp"
+        ],
+        "cca2": "JP",
+        "ccn3": "392",
+        "cca3": "JPN",
+        "cioc": "JPN",
+        "independent": true,
+        "status": "officially-assigned",
+        "unMember": true,
+        "currencies": {
+            "JPY": {
+                "name": "Japanese yen",
+                "symbol": "¥"
+            }
+        },
+        "capital": [
+            "Tokyo"
+        ],
+        "region": "Asia",
+        "subregion": "Eastern Asia",
+        "languages": {
+            "jpn": "Japanese"
+        },
+        "latlng": [
+            36.0,
+            138.0
+        ],
+        "borders": [],
+        "area": 377930.0,
+        "population": 125836021,
+        "flags": {
+            "png": "https://flagcdn.com/w320/jp.png",
+            "svg": "https://flagcdn.com/jp.svg"
+        }
+    },
+    {
+        "name": {
+            "common": "Brazil",
+            "official": "Federative Republic of Brazil"
+        },
+        "tld": [
+            ".br"
+        ],
+        "cca2": "BR",
+        "ccn3": "076",
+        "cca3": "BRA",
+        "cioc": "BRA",
+        "independent": true,
+        "status": "officially-assigned",
+        "unMember": true,
+        "currencies": {
+            "BRL": {
+                "name": "Brazilian real",
+                "symbol": "R$"
+            }
+        },
+        "capital": [
+            "Brasília"
+        ],
+        "region": "Americas",
+        "subregion": "South America",
+        "languages": {
+            "por": "Portuguese"
+        },
+        "latlng": [
+            -10.0,
+            -55.0
+        ],
+        "borders": [
+            "ARG",
+            "BOL",
+            "COL",
+            "GUF",
+            "GUY",
+            "PRY",
+            "PER",
+            "SUR",
+            "URY",
+            "VEN"
+        ],
+        "area": 8515767.0,
+        "population": 212559409,
+        "flags": {
+            "png": "https://flagcdn.com/w320/br.png",
+            "svg": "https://flagcdn.com/br.svg"
+        }
+    }
+]
